@@ -153,15 +153,14 @@ SCRIPT
 
 ## Step 4: Install quality-gate CLI
 
-```bash
-npm install -g @renanliberato/quality-gate
-```
-
-Or without global install:
+Clone the repo and add `bin/` to your PATH:
 
 ```bash
-npx @renanliberato/quality-gate validate
+git clone https://github.com/renanliberato/nehemiah.git /path/to/quality-gate
+export PATH="$PATH:/path/to/quality-gate/bin"
 ```
+
+Add the `export` line to your shell profile to persist.
 
 ---
 

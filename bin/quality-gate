@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# quality-gate CLI entry point
+# Add this project's bin/ directory to PATH to use:
+#   export PATH="$PATH:/path/to/quality-gate/bin"
+set -euo pipefail
+DIR="$(cd "$(dirname "$0")" && pwd)"
+exec node "$DIR/quality-gate.js" "$@"

@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "Quality gate CLI for pi agent — enforces coverage regression and linter warnings-as-errors",
   "type": "module",
-  "bin": {
-    "quality-gate": "./bin/quality-gate.js"
-  },
   "files": [
     "bin/",
     "src/",

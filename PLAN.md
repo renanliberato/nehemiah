@@ -33,7 +33,7 @@ This is a **self-healing loop**: the agent cannot escape the gate by just respon
 
 ## 1. CLI Tool: `quality-gate`
 
-Language: **TypeScript**, distributed as npm package `@renanliberato/quality-gate`. Single binary entry point via `bin/quality-gate`.
+Language: **TypeScript**, run from source via `bin/quality-gate`. Add this project's `bin/` directory to PATH to use the CLI.
 
 ### Commands
 
@@ -403,7 +403,7 @@ ruff check . | grep -q "error" && exit 1 || exit 0
 ```
 quality-gate/
 ├── README.md                    # Quick start + philosophy
-├── package.json                 # npm package (@renanliberato/quality-gate)
+├── package.json                 # project metadata
 ├── tsconfig.json
 ├── bin/
 │   ├── quality-gate             # CLI entry (#!/usr/bin/env node)

@@ -22,9 +22,14 @@ User sends prompt
 
 ### 1. Install
 
+Clone the repo and add `bin/` to your PATH:
+
 ```bash
-npm install -g @renanliberato/quality-gate
+git clone https://github.com/renanliberato/nehemiah.git /path/to/quality-gate
+export PATH="$PATH:/path/to/quality-gate/bin"
 ```
+
+Add the `export` line to your `~/.zshrc` or `~/.bashrc` to persist.
 
 ### 2. Create convention scripts
 
@@ -81,13 +86,8 @@ quality-gate run --save-coverage --skip-linter
 Copy the extension to your project:
 
 ```bash
-cp node_modules/@renanliberato/quality-gate/extension/index.ts .pi/extensions/quality-gate.ts
-```
-
-Or install as a pi package:
-
-```bash
-pi install npm:@renanliberato/quality-gate
+mkdir -p .pi/extensions
+cp /path/to/quality-gate/extension/index.ts .pi/extensions/quality-gate.ts
 ```
 
 Configure in `.pi/settings.json`:
