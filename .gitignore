@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.quality-gate/
+__fixtures__/*/node_modules/
+__fixtures__/*/coverage/
+__fixtures__/*/.quality-gate/
+*.log
+.DS_Store

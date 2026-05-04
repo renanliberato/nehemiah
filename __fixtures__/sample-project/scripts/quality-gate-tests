@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Runs vitest with coverage, outputs Istanbul json-summary format to $1
+# $1: path where coverage summary JSON should be written (optional)
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+cd "$PROJECT_DIR"
+
+# Run tests with coverage (json-summary reporter always writes to coverage/coverage-summary.json)
+npx vitest run \
+  --reporter=verbose \
+  --coverage \
+  --coverage.reporter=json-summary \
+  --coverage.reporter=text 2>&1
+
+# Copy the coverage summary to the requested path if provided
+if [ -n "${1:-}" ]; then
+  mkdir -p "$(dirname "$1")"
+  if [ -f "coverage/coverage-summary.json" ]; then
+    cp "coverage/coverage-summary.json" "$1"
+  fi
+fi

@@ -1,0 +1,33 @@
+{
+  "name": "@renanliberato/quality-gate",
+  "version": "0.1.0",
+  "description": "Quality gate CLI for pi agent — enforces coverage regression and linter warnings-as-errors",
+  "type": "module",
+  "bin": {
+    "quality-gate": "./bin/quality-gate.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "extension/",
+    "skill/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": ["pi-package", "quality-gate", "pi-extension"],
+  "pi": {
+    "extensions": ["./extension/index.ts"],
+    "skills": ["./skill"]
+  },
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
+}
