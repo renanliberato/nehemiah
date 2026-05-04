@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 # quality-gate CLI entry point
-# Add this project's bin/ directory to PATH to use:
-#   export PATH="$PATH:/path/to/quality-gate/bin"
 set -euo pipefail
-DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Resolve symlink to find the real script directory
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+  DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$(cd -P "$(dirname "$SOURCE")" && pwd)"
+
 exec node "$DIR/quality-gate.js" "$@"
