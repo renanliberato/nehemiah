@@ -22,10 +22,25 @@ User sends prompt
 
 ### 1. Install
 
-Clone the repo and add `bin/` to your PATH:
+Clone the repo:
 
 ```bash
 git clone https://github.com/renanliberato/nehemiah.git /path/to/quality-gate
+```
+
+Choose one installation method:
+
+**Option A — symlink to /usr/local/bin (recommended):**
+
+```bash
+sudo ./nehemiah/install.sh
+# or manually:
+sudo ln -s /path/to/quality-gate/bin/quality-gate /usr/local/bin/quality-gate
+```
+
+**Option B — add to PATH:**
+
+```bash
 export PATH="$PATH:/path/to/quality-gate/bin"
 ```
 
